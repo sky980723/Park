@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class UserController {
 
     @Autowired
-    private IUserService userService;
+    IUserService userService;
 
     @RequestMapping(value = "/getUser",method = RequestMethod.GET)
     public User getUser(@RequestParam(name = "userId")String userId) {
