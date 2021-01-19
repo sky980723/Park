@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.text.park.dao.UserMapper">
+<mapper namespace="com.text.park.dao.UserDao">
   <resultMap id="BaseResultMap" type="com.text.park.entity.User">
-    <!--@mbg.generated-->
-    <!--@Table `user`-->
-    <id column="id" property="id" />
+       <id column="id" property="id" />
     <result column="mobile" property="mobile" />
     <result column="nickname" property="nickname" />
     <result column="password" property="password" />
@@ -28,13 +26,13 @@
   </resultMap>
   <sql id="Base_Column_List">
     <!--@mbg.generated-->
-    id, mobile, nickname, `password`, head_img_url, birthday, realname, address, province, 
-    work_place, isdisabled, sex, open_id, integral, insist_count, team_id, team_exercise_count, 
+    id, mobile, nickname, `password`, head_img_url, birthday, realname, address, province,
+    work_place, isdisabled, sex, open_id, integral, insist_count, team_id, team_exercise_count,
     school, department, addtime, updatetime
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
     <!--@mbg.generated-->
-    select 
+    select
     <include refid="Base_Column_List" />
     from `user`
     where id = #{id}
@@ -46,13 +44,13 @@
   </delete>
   <insert id="insert" parameterType="com.text.park.entity.User">
     <!--@mbg.generated-->
-    insert into `user` (id, mobile, nickname, `password`, head_img_url, birthday, realname, 
-      address, province, work_place, isdisabled, sex, open_id, integral, 
-      insist_count, team_id, team_exercise_count, school, department, addtime, 
+    insert into `user` (id, mobile, nickname, `password`, head_img_url, birthday, realname,
+      address, province, work_place, isdisabled, sex, open_id, integral,
+      insist_count, team_id, team_exercise_count, school, department, addtime,
       updatetime)
-    values (#{id}, #{mobile}, #{nickname}, #{password}, #{headImgUrl}, #{birthday}, #{realname}, 
-      #{address}, #{province}, #{workPlace}, #{isdisabled}, #{sex}, #{openId}, #{integral}, 
-      #{insistCount}, #{teamId}, #{teamExerciseCount}, #{school}, #{department}, #{addtime}, 
+    values (#{id}, #{mobile}, #{nickname}, #{password}, #{headImgUrl}, #{birthday}, #{realname},
+      #{address}, #{province}, #{workPlace}, #{isdisabled}, #{sex}, #{openId}, #{integral},
+      #{insistCount}, #{teamId}, #{teamExerciseCount}, #{school}, #{department}, #{addtime},
       #{updatetime})
   </insert>
   <insert id="insertSelective" parameterType="com.text.park.entity.User">

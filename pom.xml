@@ -481,19 +481,11 @@
             <build>
                 <resources>
                     <resource>
-                        <directory>/src/main/java</directory>
+                        <directory>src/main/java</directory>
                         <includes>
                             <include>**/*.xml</include>
                         </includes>
                     </resource>
-                    <resource>
-                        <directory>/src/main/resources</directory>
-                        <excludes>
-                            <exclude>application.properties</exclude>
-                            <exclude>config.properties</exclude>
-                        </excludes>
-                    </resource>
-                    <!--${project.basedir}-->
                     <resource>
                         <directory>/src/main/resources</directory>
                         <includes>
