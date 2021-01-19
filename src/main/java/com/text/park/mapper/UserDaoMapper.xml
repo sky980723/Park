@@ -8,7 +8,7 @@
         <result column="nickname" property="nickname"/>
     </resultMap>
 
-    <select id="selectByPrimaryKey" resultMap="UserMap">
+    <select id="getUser" resultMap="UserMap">
         select * from user where id = #{userId}
     </select>
 

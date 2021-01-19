@@ -18,7 +18,7 @@ public class UserServiceImpl implements IUserService {
 
     @Override
     public User getUser(String userId) {
-        User user = userDao.selectByPrimaryKey(userId);
+        User user = userDao.getUser(userId);
 
         return user;
     }

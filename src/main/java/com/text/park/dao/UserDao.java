@@ -11,5 +11,5 @@ import javax.annotation.Resource;
  */
 @Repository
 public interface UserDao {
-    User selectByPrimaryKey(String userId);
+    User getUser(String userId);
 }
