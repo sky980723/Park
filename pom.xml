@@ -342,14 +342,6 @@
                 </exclusion>
             </exclusions>
         </dependency>
-        <!-- <dependency> <groupId>co.legu</groupId> <artifactId>legu-alidayu-sms</artifactId>
-            <version>1.0.0</version> </dependency> <dependency> <groupId>com.oula</groupId>
-            <artifactId>alidayu</artifactId> <version>1.0</version> </dependency> <dependency>
-            <groupId>com.oula</groupId> <artifactId>alipay</artifactId> <version>1.0</version>
-            </dependency> <dependency> <groupId>com.oula</groupId> <artifactId>alicommon</artifactId>
-            <version>1.0</version> </dependency> -->
-
-        <!-- https://mvnrepository.com/artifact/com.google.zxing/javase -->
         <dependency>
             <groupId>com.alipay.sdk</groupId>
             <artifactId>alipay-sdk-java</artifactId>
@@ -359,13 +351,6 @@
             <groupId>com.google.zxing</groupId>
             <artifactId>javase</artifactId>
             <version>3.2.1</version>
-        </dependency>
-
-
-        <dependency>
-            <groupId>com.esdk</groupId>
-            <artifactId>obs</artifactId>
-            <version>3.19.5</version>
         </dependency>
         <dependency>
             <groupId>com.jamesmurty.utils</groupId>
@@ -462,20 +447,14 @@
         </dependency>
     </dependencies>
 
-    <!-- <build> <plugins> <plugin> <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-maven-plugin</artifactId> </plugin> <plugin> <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId> <configuration> <source>${java.version}</source>
-        <target>${java.version}</target> <encoding>${project.build.sourceEncoding}</encoding>
-        </configuration> </plugin> </plugins> <defaultGoal>compile</defaultGoal>
-        </build> -->
     <pluginRepositories>
         <pluginRepository>
             <id>spring-snapshots</id>
             <url>http://repo.spring.io/libs-snapshot</url>
         </pluginRepository>
     </pluginRepositories>
-    <profiles>
 
+    <profiles>
         <profile>
             <id>release</id>
             <build>
@@ -485,19 +464,29 @@
                         <includes>
                             <include>**/*.xml</include>
                         </includes>
+                        <filtering>false</filtering>
                     </resource>
                     <resource>
-                        <directory>/src/main/resources</directory>
-                        <includes>
-                            <include>application.properties</include>
-                            <include>config.properties</include>
-                        </includes>
+                        <directory>src/main/resources</directory>
                     </resource>
                 </resources>
             </build>
-
         </profile>
     </profiles>
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.xml</include>
+                </includes>
+                <filtering>false</filtering>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+            </resource>
+        </resources>
+    </build>
     <distributionManagement>
         <repository>
             <id>releases</id>
